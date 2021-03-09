@@ -15,10 +15,9 @@ body {
 
 .navbar {
     display: flex;
-    background-color: rgba(184, 210, 248, 0.3);
-    backdrop-filter: blur(8px);
-    border: 2px solid rgba(99, 83, 62, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
     background-clip: border-box;
+    backdrop-filter: blur(5px);
     box-shadow: 10px 10px 10px rgba(37, 47, 63, 0.3);
     justify-content: space-between;
     align-items: center;
@@ -45,7 +44,7 @@ body {
 }
 
 .navlinks li:hover {
-    background-color: rgb(13, 31, 17);
+    background-color: rgba(0, 0, 0, 0.562);
 }
 
 .logo {
@@ -134,6 +133,7 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
+    z-index: 1;
 }
 
 .s1 img {
@@ -156,9 +156,19 @@ body {
     mix-blend-mode: screen;
 }
 
-.s2 {
-    height: 1000px;
-    background: olive;
+.navhome {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 50%;
+    width: 100%;
+}
+
+.lbutton {
+    display: inline-block;
+    height: 100px;
+    width: 150px;
+    margin: 15px;
 }
 
 @media (max-width:600px) {
