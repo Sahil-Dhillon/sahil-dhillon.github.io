@@ -1,0 +1,232 @@
+.about-section {
+    width: 100%;
+    display: flex;
+    padding: 3rem 0;
+    flex-direction: column;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.about-hero {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    width: 70%;
+    min-width: 60%;
+}
+
+.about-hero-left {
+    min-width: 50%;
+    width: 50%;
+    position: relative;
+    /* text-align: center; */
+}
+
+.about-blob-big {
+    width: 70%;
+    height: auto;
+    transition: transform 4s;
+    border-radius: 50%;
+}
+
+.about-blob-big:hover {
+    transform: scale(1.04);
+}
+
+.about-hero-right {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.about-hero-hi-tag {
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.about-hero-hi-tag::after {
+    content: ",";
+    font-size: 6rem;
+    color: var(--primary2);
+}
+
+.about-hero-right h1 {
+    display: none;
+}
+
+.about-cta {
+    border: 1px solid var(--text2);
+    position: relative;
+    margin: 0.8rem 0rem;
+    min-width: 200px;
+    height: 2rem;
+    transition: all 0.6s;
+}
+
+.about-cta-tag {
+    height: 100%;
+    width: 100%;
+    /* position: absolute; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0);
+    color: var(--text2);
+    font-size: 1.2rem;
+}
+
+.about-cta-email {
+    display: none;
+    height: 100%;
+    width: 100%;
+    /* position: absolute; */
+    align-items: center;
+    justify-content: center;
+    background: var(--primary1);
+    color: var(--text2);
+    font-size: 0.9rem;
+    z-index: 2;
+    opacity: 0;
+    user-select: none;
+}
+
+.about-cta:hover {
+    min-width: 50%
+}
+
+.about-cta:hover .about-cta-tag {
+    display: none;
+}
+
+.about-cta:hover .about-cta-email {
+    display: flex;
+    cursor: pointer;
+    animation: fade_in 0.7s linear forwards;
+}
+
+.about-copy-toast {
+    position: fixed;
+    display: none;
+    bottom: 3rem;
+    right: 0;
+    padding: 1.2rem 1.5rem;
+    width: 220px;
+    background: var(--primary2);
+    border: 4px solid var(--primary3);
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    z-index: 5;
+}
+
+.about-copy-toast-call {
+    display: block;
+    animation: toast 2s linear forwards;
+}
+
+.about-main {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+}
+
+.about-main h1 {
+    font-size: 2rem;
+    margin: 2rem;
+}
+
+.about-main-p {
+    text-align: center;
+    font-size: 0.9rem;
+    margin: 0.5rem;
+    color: var(--text2);
+}
+
+@media(max-width:600px) {
+    .about-hero {
+        align-items: center;
+        flex-direction: column;
+    }
+    .about-hero-left {
+        width: 70%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+    .about-hero-right {
+        align-items: center;
+        width: 100%;
+    }
+    .about-hero-right p {
+        text-align: center;
+        font-size: 0.6rem;
+    }
+    .about-cta {
+        margin: 0.3rem 0;
+    }
+}
+
+@media(max-width:800px) {
+    .about-hero-hi-tag {
+        font-size: 3rem;
+    }
+    .about-hero-hi-tag::after {
+        font-size: 4rem;
+    }
+    .about-hero-right h1 {
+        line-height: 0.6rem;
+        letter-spacing: -1px;
+        font-size: 1.4rem;
+    }
+    .about-hero-right p {
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+        margin: 1rem 0;
+        font-weight: 300;
+    }
+    .about-cta {
+        height: 24px;
+        min-width: 100px;
+    }
+    .about-cta-tag {
+        font-size: 1rem;
+    }
+    .about-cta-email {
+        padding: 0 1rem;
+    }
+    .about-copy-toast {
+        width: 200px;
+        padding: 0.5rem 1rem;
+    }
+}
+
+@keyframes fade_in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes toast {
+    0% {
+        transform: translateX(320px);
+    }
+    12% {
+        transform: translateX(0px);
+    }
+    20% {
+        transform: translateX(10px);
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(10px);
+        opacity: 0;
+        display: none;
+    }
+}

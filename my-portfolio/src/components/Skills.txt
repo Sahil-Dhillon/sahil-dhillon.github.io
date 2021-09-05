@@ -1,0 +1,52 @@
+import React, { useState } from "react";
+import { CgShapeZigzag } from 'react-icons/cg'
+import './Skills.css'
+import { SkillData } from '../data'
+const SkillCard = (data) => {
+    return (
+        <div className="skills-card">
+            <img src={data.img} alt="skills-img" />
+            <div className="skills-card-info">
+                <ul>
+                    {data.info.map((data, index) => {
+                        return (
+                            <li key={index} className="skills-li">{data}</li>
+                        )
+                    })}
+                </ul>
+
+            </div>
+        </div>
+    )
+}
+const SkillContainer = (data) => {
+    return (
+        <div className="skills-container">
+            <h1 className="skills-type">{data.type}<br /><CgShapeZigzag style={{ width: "100%" }} /></h1>
+            <div className="skills-inner-container">
+                {
+                    data.skills.map((data, index) => {
+                        return <SkillCard key={index} {...data} />
+                    })
+                }
+            </div>
+        </div>
+    )
+}
+const Skills = () => {
+    const [data, setData] = useState(SkillData)
+    return (
+        <section className="skills-section">
+            <h1>My Skills ✨ </h1>
+            <div className="skills-main">
+
+                {
+                    data.map((data, index) => {
+                        return <SkillContainer key={index} {...data} />
+                    })
+                }
+            </div>
+        </section>
+    )
+}
+export default Skills

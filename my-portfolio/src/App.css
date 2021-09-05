@@ -1,0 +1,28 @@
+:root {
+    --color1: #000033;
+    --color2: #0066cc;
+    --color3: #0099ff;
+    --primary1: #D4EDE7;
+    --primary2: #89B0AE;
+    --primary3: #629390;
+    --secondary1: #C5C6E3;
+    --secondary2: #A7A9D6;
+    --text1: #26081C;
+    --text2: #150811;
+}
+
+main {
+    background-color: var(--primary1);
+    min-height: 100vh;
+    color: var(--text2);
+    width: 100%;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    padding: 3rem 0;
+    flex-direction: column;
+    align-items: center;
+    min-height: 90vh;
+}
